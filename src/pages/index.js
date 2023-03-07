@@ -1,30 +1,20 @@
-import { ReactNode } from "react";
-import { Input } from "@chakra-ui/react";
 import { useColorMode } from "@chakra-ui/react";
 import {
   Box,
   Flex,
-  Avatar,
   HStack,
   Link,
   IconButton,
-  Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
   useDisclosure,
   useColorModeValue,
   Stack,
+  Text,
 } from "@chakra-ui/react";
-
 import { Heading } from "@chakra-ui/react";
 
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-
-const Links = ["Programming", "Art", "Blog", "Contact"];
-
+import { FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
+import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
+const Links = ["About me", "Projects", "Blog", "Art", "Contact"];
 const NavLink = ({ children }, { children: ReactNode }) => (
   <Link
     px={2}
@@ -42,7 +32,7 @@ const NavLink = ({ children }, { children: ReactNode }) => (
 
 export default function Simple() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { toggleColorMode } = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <>
@@ -56,7 +46,6 @@ export default function Simple() {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={"center"}>
-            <Box>vindennt</Box>
             <HStack
               as={"nav"}
               spacing={4}
@@ -67,29 +56,17 @@ export default function Simple() {
               ))}
             </HStack>
           </HStack>
-          <Flex alignItems={"center"}>
-            <Menu>
-              <MenuButton
-                as={Button}
-                rounded={"full"}
-                variant={"link"}
-                cursor={"pointer"}
-                minW={0}
-              >
-                <Avatar
-                  size={"sm"}
-                  src={
-                    "https://images.unsplash.com/photo-1493666438817-866a91353ca9?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9"
-                  }
-                />
-              </MenuButton>
-              <MenuList>
-                <MenuItem>Link 1</MenuItem>
-                <MenuItem>Link 2</MenuItem>
-                <MenuDivider />
-                <MenuItem>Link 3</MenuItem>
-              </MenuList>
-            </Menu>
+          <Flex alignItems="center" gap="3.5">
+            <IconButton aria-label="Github" onClick="" icon={<FaGithub />} />
+            <IconButton aria-label="Github" onClick="" icon={<FaTwitter />} />
+            <IconButton aria-label="Github" onClick="" icon={<FaInstagram />} />
+            <IconButton
+              aria-label="Toggle dark mode"
+              onClick={toggleColorMode}
+              colorScheme="purple"
+            >
+              {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+            </IconButton>
           </Flex>
         </Flex>
 
@@ -115,8 +92,10 @@ export default function Simple() {
             justifyContent="top"
           >
             <Heading mb={6}>Dennis Truong</Heading>
-
-            <Button onClick={toggleColorMode}>Toggle color</Button>
+            <Text mb={6}>
+              Web developer with experience in JavaScript, Java, C++, and
+              Python.
+            </Text>
           </Flex>
         </Flex>
       </Box>

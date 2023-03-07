@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Purpose
 
-Portfolio website using ChakraUi
+Portfolio website using ChakraUI
 
 ## To Do
 
