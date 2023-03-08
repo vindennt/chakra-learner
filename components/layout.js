@@ -1,78 +1,119 @@
+//import utilStyles from "../styles/utils.module.css";
+
+import React from "react";
+import ChakraUIRenderer from "chakra-ui-markdown-renderer";
+import ReactMarkdown from "react-markdown";
+
+import {
+  Box,
+  Flex,
+  HStack,
+  Link,
+  IconButton,
+  useDisclosure,
+  useColorModeValue,
+  Stack,
+  Text,
+  useColorMode,
+} from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
+import { FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
+import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import Head from "next/head";
-import Image from "next/image";
-import Script from "next/script";
 
-import styles from "./layout.module.css";
-import utilStyles from "../styles/utils.module.css";
-import Link from "next/link";
+const Links = [
+  { name: "About", to: "/" },
+  { name: "Projects", to: "/projects" },
+  { name: "Blog", to: "/blog" },
+  { name: "Art", to: "/art" },
+  { name: "Contact", to: "/contact" },
+];
 
-const name = "Dennis Truong";
-export const siteTitle = "vindennt";
+// const allPostsData = getSortedPostsData();
 
-export default function Layout({ children, home }) {
+export default function Layout() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
-        <meta
-          property="og:image"
-          content={`https://og-image.vercel.app/${encodeURI(
-            siteTitle
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-        />
-        <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
-      <Script
-        src="https://connect.facebook.net/en_US/sdk.js"
-        strategy="lazyOnload"
-        onLoad={() =>
-          console.log(`script loaded correctly, window.FB has been populated`)
-        }
-      />
-      <header className={styles.header}>
-        {home ? (
-          <>
-            <Image
-              priority
-              src="/images/d.png"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-              <Image
-                priority
-                src="/images/d.png"
-                className={utilStyles.borderCircle}
-                height={108}
-                width={108}
-                alt={name}
-              />
-            </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/" className={utilStyles.colorInherit}>
-                {name}
-              </Link>
-            </h2>
-          </>
-        )}
-      </header>
-      <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">← Back to home</Link>
-        </div>
-      )}
-    </div>
+    <>
+      <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
+        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+          <IconButton
+            size={"md"}
+            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            aria-label={"Open Menu"}
+            display={{ md: "none" }}
+            onClick={isOpen ? onClose : onOpen}
+          />
+          <HStack spacing={8} alignItems={"center"}>
+            <HStack
+              as={"nav"}
+              spacing={4}
+              display={{ base: "none", md: "flex" }}
+            >
+              {/* {Links.map((link) => (
+                <NavLink key={link}>{link}</NavLink>
+              ))} */}
+              {Links.map((link) => (
+                <Link
+                  px={2}
+                  py={1}
+                  rounded={"md"}
+                  _hover={{
+                    textDecoration: "none",
+                    bg: useColorModeValue("gray.200", "gray.700"),
+                  }}
+                  key={link.name}
+                  href={link.to}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </HStack>
+          </HStack>
+          <Flex alignItems="center" gap="3.5">
+            <a href="https://www.github.com/vindennt" target="blank">
+              <IconButton aria-label="Github" icon={<FaGithub />} />
+            </a>
+            <a href="https://twitter.com/vindennt" target="blank">
+              <IconButton aria-label="Twitter" icon={<FaTwitter />} />
+            </a>
+            <a href="https://www.instagram.com/vindennt/" target="blank">
+              <IconButton aria-label="Instagram" icon={<FaInstagram />} />
+            </a>
+            <IconButton
+              aria-label="Toggle dark mode"
+              onClick={toggleColorMode}
+              colorScheme={colorMode === "light" ? "blackAlpha" : "blue"}
+            >
+              {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+            </IconButton>
+          </Flex>
+        </Flex>
+
+        {isOpen ? (
+          <Box pb={4} display={{ md: "none" }}>
+            <Stack as={"nav"} spacing={4}>
+              {Links.map((link) => (
+                <Link
+                  px={2}
+                  py={1}
+                  rounded={"md"}
+                  _hover={{
+                    textDecoration: "none",
+                    bg: useColorModeValue("gray.200", "gray.700"),
+                  }}
+                  key={link.name}
+                  href={link.to}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </Stack>
+          </Box>
+        ) : null}
+      </Box>
+    </>
   );
 }
