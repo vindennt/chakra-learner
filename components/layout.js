@@ -10,7 +10,7 @@ import {
   Stack,
   useColorMode,
 } from "@chakra-ui/react";
-import { FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 const Links = [
@@ -64,12 +64,16 @@ export default function Layout() {
             <a href="https://www.github.com/vindennt" target="blank">
               <IconButton aria-label="Github" icon={<FaGithub />} />
             </a>
+            <a
+              href="https://www.linkedin.com/in/dennis-truong-111291264/"
+              target="blank"
+            >
+              <IconButton aria-label="LinkedIn" icon={<FaLinkedinIn />} />
+            </a>
             <a href="https://twitter.com/vindennt" target="blank">
               <IconButton aria-label="Twitter" icon={<FaTwitter />} />
             </a>
-            <a href="https://www.instagram.com/vindennt/" target="blank">
-              <IconButton aria-label="Instagram" icon={<FaInstagram />} />
-            </a>
+
             <IconButton
               aria-label="Toggle dark mode"
               onClick={toggleColorMode}
