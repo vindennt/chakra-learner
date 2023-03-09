@@ -1,9 +1,4 @@
-//import utilStyles from "../styles/utils.module.css";
-
 import React from "react";
-import ChakraUIRenderer from "chakra-ui-markdown-renderer";
-import ReactMarkdown from "react-markdown";
-
 import {
   Box,
   Flex,
@@ -13,13 +8,10 @@ import {
   useDisclosure,
   useColorModeValue,
   Stack,
-  Text,
   useColorMode,
 } from "@chakra-ui/react";
-import { Heading } from "@chakra-ui/react";
 import { FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
-import Head from "next/head";
 
 const Links = [
   { name: "About", to: "/" },
@@ -28,8 +20,6 @@ const Links = [
   { name: "Art", to: "/art" },
   { name: "Contact", to: "/contact" },
 ];
-
-// const allPostsData = getSortedPostsData();
 
 export default function Layout() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -46,15 +36,13 @@ export default function Layout() {
             display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}
           />
+          {/* Mobile drop down menu*/}
           <HStack spacing={8} alignItems={"center"}>
             <HStack
               as={"nav"}
               spacing={4}
               display={{ base: "none", md: "flex" }}
             >
-              {/* {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
-              ))} */}
               {Links.map((link) => (
                 <Link
                   px={2}
@@ -92,6 +80,7 @@ export default function Layout() {
           </Flex>
         </Flex>
 
+        {/* Desktop style navbar  */}
         {isOpen ? (
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>

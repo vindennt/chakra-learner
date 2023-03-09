@@ -9,3 +9,4 @@ Portfolio website using ChakraUI
 - Resume landing page
 - Blog
 - Link to redirect to vindennt art
+- Analytics
