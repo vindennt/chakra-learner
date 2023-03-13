@@ -1,30 +1,49 @@
-import { getAllPostIds, getPostData } from "../../lib/posts";
+import React from "react";
+import ReactDom from "react-dom";
+import Layout from "../../../components/layout";
+import { Box, Text, Flex, Link, Heading } from "@chakra-ui/react";
+import matter from "gray-matter";
+import ChakraUIRenderer from "chakra-ui-markdown-renderer";
+import ReactMarkdown from "react-markdown";
 
-export default function Post({ postData }) {
+<ReactMarkdown children={matter.content} />;
+
+function PostTemplate({ content, data }) {
+  // This holds the data between `---` from the .md file
+  const frontmatter = data;
+
   return (
-    <Layout>
-      {postData.title}
-      <br />
-      {postData.id}
-      <br />
-      {postData.date}
-    </Layout>
+    <Box>
+      <Layout></Layout>
+      <Flex
+        direction="column"
+        background="grey.100"
+        p={10}
+        rounded={6}
+        alignItems="center"
+        justifyContent="top"
+      >
+        <Heading p={7}>{frontmatter.title}</Heading>
+        <Text p={5}>{frontmatter.date} by Dennis Truong</Text>
+        <ReactMarkdown children={content} />
+      </Flex>
+    </Box>
   );
 }
 
-export async function getStaticProps({ params }) {
-  const postData = getPostData(params.id);
-  return {
-    props: {
-      postData,
-    },
-  };
-}
+PostTemplate.getInitialProps = async (context) => {
+  const { id } = context.query;
 
-export async function getStaticPaths() {
-  const paths = getAllPostIds();
-  return {
-    paths,
-    fallback: false,
-  };
-}
+  // Import our .md file using the `slug` from the URL
+  const content = await import(`../../../content/${id}.md`);
+
+  // Parse .md data through `matter`
+  const data = matter(content.default);
+
+  // Pass data to our component props
+  return { ...data };
+
+  return { id };
+};
+
+export default PostTemplate;
