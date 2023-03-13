@@ -31,25 +31,23 @@ import Layout from "../../components/layout";
 // const allPostsData = getSortedPostsData();
 export default function Home() {
   return (
-    <Layout>
-      <Box p={4}>
-        <Flex height="20vh" alignItems="center" direction="column">
-          <Flex
-            direction="column"
-            background="grey.100"
-            p={12}
-            rounded={6}
-            alignItems="center"
-            justifyContent="top"
-          >
-            <Heading mb={6}>Dennis Truong</Heading>
-            <Text mb={6}>
-              Web developer with experience in JavaScript, Java, C+ +, and
-              Python.
-            </Text>
-          </Flex>
+    <Box>
+      <Layout></Layout>
+      <Flex height="20vh" alignItems="center" direction="column">
+        <Flex
+          direction="column"
+          background="grey.100"
+          p={12}
+          rounded={6}
+          alignItems="center"
+          justifyContent="top"
+        >
+          <Heading mb={6}>Dennis Truong</Heading>
+          <Text mb={6}>
+            Web developer with experience in JavaScript, Java, C+ +, and Python.
+          </Text>
         </Flex>
-      </Box>
-    </Layout>
+      </Flex>
+    </Box>
   );
 }
