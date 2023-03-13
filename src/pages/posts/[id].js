@@ -1,31 +1,47 @@
+// code reference: Telmo Goncalves
+//"https://www.pullrequest.com/blog/build-a-blog-with-nextjs-and-markdown/?ref=morioh.com&utm_source=morioh.com
+
 import React from "react";
-import ReactDom from "react-dom";
 import Layout from "../../../components/layout";
-import { Box, Text, Flex, Link, Heading } from "@chakra-ui/react";
+import { Box, Text, Flex, Link, Heading, Container } from "@chakra-ui/react";
 import matter from "gray-matter";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
 import ReactMarkdown from "react-markdown";
+import Date from "../../../components/date";
 
-<ReactMarkdown children={matter.content} />;
+<ReactMarkdown
+  components={ChakraUIRenderer()}
+  children={matter.content}
+  skipHtml
+/>;
 
 function PostTemplate({ content, data }) {
-  // This holds the data between `---` from the .md file
   const frontmatter = data;
 
   return (
     <Box>
       <Layout></Layout>
       <Flex
-        direction="column"
-        background="grey.100"
-        p={10}
-        rounded={6}
+        height="20vh"
         alignItems="center"
-        justifyContent="top"
+        direction="column"
+        marginLeft="15px"
+        marginRight="15px"
       >
-        <Heading p={7}>{frontmatter.title}</Heading>
-        <Text p={5}>{frontmatter.date} by Dennis Truong</Text>
-        <ReactMarkdown children={content} />
+        <Heading marginTop={70}>{frontmatter.title}</Heading>
+        <Container
+          direction="column"
+          background="grey.100"
+          p={3}
+          centerContent
+          maxW="2xl"
+        >
+          <Text>
+            <Date dateString={frontmatter.date} />
+          </Text>
+          <Text marginBottom={5}>By Dennis Truong</Text>
+          <ReactMarkdown children={content} />
+        </Container>
       </Flex>
     </Box>
   );
@@ -34,15 +50,12 @@ function PostTemplate({ content, data }) {
 PostTemplate.getInitialProps = async (context) => {
   const { id } = context.query;
 
-  // Import our .md file using the `slug` from the URL
+  // Import our .md file using the `id` from the URL
   const content = await import(`../../../content/${id}.md`);
-
   // Parse .md data through `matter`
   const data = matter(content.default);
-
   // Pass data to our component props
   return { ...data };
-
   return { id };
 };
 
