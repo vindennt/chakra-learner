@@ -7,9 +7,12 @@ import {
   TabPanels,
   TabPanel,
   TabList,
+  Link,
+  IconButton,
 } from "@chakra-ui/react";
 import { Heading } from "@chakra-ui/react";
 import Layout from "../../components/layout";
+import { FaGithub, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 
 function ProfileTab({ text }) {
   return (
@@ -39,10 +42,12 @@ export default function Home() {
           justifyContent="top"
         >
           <Heading mb={6}>Dennis Truong</Heading>
+
           <Text mb={6}>
             Web developer and artist with experience in JavaScript, Java, C++,
             and Python.
           </Text>
+
           <Tabs
             variant="none"
             colorScheme="cyan"
@@ -85,6 +90,26 @@ export default function Home() {
                   background="grey.100"
                 >
                   <Text>Hi im denis </Text>
+                  <Link p={4} href="mailto:vindennt@gmail.com">
+                    vindennt@gmail.com
+                  </Link>
+                  <Flex alignItems="center" gap="3.5">
+                    <a href="https://www.github.com/vindennt" target="blank">
+                      <IconButton aria-label="Github" icon={<FaGithub />} />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/dennis-truong-111291264/"
+                      target="blank"
+                    >
+                      <IconButton
+                        aria-label="LinkedIn"
+                        icon={<FaLinkedinIn />}
+                      />
+                    </a>
+                    <a href="https://twitter.com/vindennt" target="blank">
+                      <IconButton aria-label="Twitter" icon={<FaTwitter />} />
+                    </a>
+                  </Flex>
                 </Flex>
               </TabPanel>
               <TabPanel>

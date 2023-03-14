@@ -10,20 +10,53 @@ import {
   Stack,
   useColorMode,
   Text,
+  NextLink,
 } from "@chakra-ui/react";
+
 import { FaGithub, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { useRouter } from "next/router";
 
 const Links = [
   { name: "About", to: "/" },
   { name: "Art", to: "/art" },
   { name: "Blog", to: "/blog" },
-  { name: "Contact", to: "/contact" },
+  // { name: "Contact", to: "/contact" },
 ];
 
-export default function Layout() {
+const LinkItem = ({ href, path, target, children, ...props }) => {
+  const active = path === href;
+  const inactiveColor = useColorModeValue("gray.800", "whiteAlpha.900");
+  return (
+    <Link
+      _hover={
+        active
+          ? "none"
+          : {
+              textDecoration: "none",
+              bg: useColorModeValue("gray.300", "gray.700"),
+            }
+      }
+      px={2}
+      py={1}
+      as={NextLink}
+      borderRadius="8px"
+      href={href}
+      scroll={false}
+      p={2}
+      bg={active ? "teal.400" : undefined}
+      target={target}
+      {...props}
+    >
+      {children}
+    </Link>
+  );
+};
+
+const Layout = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
+  const { asPath } = useRouter();
 
   return (
     <>
@@ -47,19 +80,9 @@ export default function Layout() {
               display={{ base: "none", md: "flex" }}
             >
               {Links.map((link) => (
-                <Link
-                  px={2}
-                  py={1}
-                  rounded={"md"}
-                  _hover={{
-                    textDecoration: "none",
-                    bg: useColorModeValue("gray.200", "gray.700"),
-                  }}
-                  key={link.name}
-                  href={link.to}
-                >
+                <LinkItem key={link.name} href={link.to} path={asPath}>
                   {link.name}
-                </Link>
+                </LinkItem>
               ))}
             </HStack>
           </HStack>
@@ -67,7 +90,7 @@ export default function Layout() {
             <IconButton
               aria-label="Toggle dark mode"
               onClick={toggleColorMode}
-              colorScheme={colorMode === "light" ? "blackAlpha" : "blue"}
+              colorScheme={colorMode === "light" ? "blackAlpha" : "teal"}
             >
               {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
             </IconButton>
@@ -79,19 +102,9 @@ export default function Layout() {
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
               {Links.map((link) => (
-                <Link
-                  px={2}
-                  py={1}
-                  rounded={"md"}
-                  _hover={{
-                    textDecoration: "none",
-                    bg: useColorModeValue("gray.200", "gray.700"),
-                  }}
-                  key={link.name}
-                  href={link.to}
-                >
+                <LinkItem key={link.name} href={link.to} path={asPath}>
                   {link.name}
-                </Link>
+                </LinkItem>
               ))}
             </Stack>
           </Box>
@@ -99,4 +112,6 @@ export default function Layout() {
       </Box>
     </>
   );
-}
+};
+
+export default Layout;
