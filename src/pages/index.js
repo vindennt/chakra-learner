@@ -44,7 +44,7 @@ export default function Home() {
             and Python.
           </Text>
           <Tabs
-            variant="soft-rounded"
+            variant="none"
             colorScheme="cyan"
             defaultIndex={0}
             align="center"
@@ -52,40 +52,56 @@ export default function Home() {
             <TabList>
               <Tab
                 _selected={{
-                  color: "white",
-                  bg: "blue.300",
-                  borderRadius: "8",
+                  borderBottom: "2px",
+                  mb: "2px",
+                }}
+              >
+                Bio
+              </Tab>
+              <Tab
+                _selected={{
+                  borderBottom: "2px",
+                  mb: "2px",
                 }}
               >
                 Skills
               </Tab>
               <Tab
                 _selected={{
-                  color: "white",
-                  bg: "blue.300",
-                  borderRadius: "8",
+                  borderBottom: "2px",
+                  mb: "2px",
                 }}
               >
                 Projects
               </Tab>
-              <Tab
-                _selected={{
-                  color: "white",
-                  bg: "blue.300",
-                  borderRadius: "8",
-                }}
-              >
-                Education
-              </Tab>
             </TabList>
             <TabPanels>
               <TabPanel>
-                <p>A few</p>
+                <Flex
+                  direction="column"
+                  p={5}
+                  alignItems="center"
+                  justifyContent="top"
+                  background="grey.100"
+                >
+                  <Text>Hi im denis </Text>
+                </Flex>
               </TabPanel>
               <TabPanel>
                 <Flex
                   direction="column"
-                  p={12}
+                  p={5}
+                  alignItems="center"
+                  justifyContent="top"
+                  background="grey.100"
+                >
+                  <Text>Yes </Text>
+                </Flex>
+              </TabPanel>
+              <TabPanel>
+                <Flex
+                  direction="column"
+                  p={5}
                   alignItems="center"
                   justifyContent="top"
                   background="grey.100"
@@ -93,9 +109,6 @@ export default function Home() {
                   <Text>NLGDP</Text>
                   <Text>Nathan Lu Genomic Duplication Project</Text>
                 </Flex>
-              </TabPanel>
-              <TabPanel>
-                <p>School</p>
               </TabPanel>
             </TabPanels>
           </Tabs>

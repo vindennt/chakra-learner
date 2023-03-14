@@ -16,25 +16,20 @@ export default function Contact() {
         <Link p={4} href="mailto:vindennt@gmail.com">
           vindennt@gmail.com
         </Link>
-        <Link
-          href="https://www.linkedin.com/in/dennis-truong-111291264/"
-          target="_blank"
-        >
-          <Flex alignItems="center" gap="3.5">
-            <a href="https://www.github.com/vindennt" target="blank">
-              <IconButton aria-label="Github" icon={<FaGithub />} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/dennis-truong-111291264/"
-              target="blank"
-            >
-              <IconButton aria-label="LinkedIn" icon={<FaLinkedinIn />} />
-            </a>
-            <a href="https://twitter.com/vindennt" target="blank">
-              <IconButton aria-label="Twitter" icon={<FaTwitter />} />
-            </a>
-          </Flex>
-        </Link>
+        <Flex alignItems="center" gap="3.5">
+          <a href="https://www.github.com/vindennt" target="blank">
+            <IconButton aria-label="Github" icon={<FaGithub />} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/dennis-truong-111291264/"
+            target="blank"
+          >
+            <IconButton aria-label="LinkedIn" icon={<FaLinkedinIn />} />
+          </a>
+          <a href="https://twitter.com/vindennt" target="blank">
+            <IconButton aria-label="Twitter" icon={<FaTwitter />} />
+          </a>
+        </Flex>
       </Flex>
     </Box>
   );

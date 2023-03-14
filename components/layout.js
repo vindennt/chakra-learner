@@ -15,7 +15,7 @@ import { FaGithub, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 const Links = [
-  { name: "Programming", to: "/" },
+  { name: "About", to: "/" },
   { name: "Art", to: "/art" },
   { name: "Blog", to: "/blog" },
   { name: "Contact", to: "/contact" },
