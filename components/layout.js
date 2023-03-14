@@ -113,17 +113,36 @@ export default function Layout() {
           </Box>
         ) : null}
       </Box>
-
-      <Tabs>
+      <Tabs p={5} variant="soft-rounded" colorScheme="gray" defaultIndex={1}>
         <TabList>
           <Tab>One</Tab>
           <Tab>Two</Tab>
           <Tab>Three</Tab>
+          <Tab>LONGBOI</Tab>
+          <Tab>5</Tab>
+          <Tab>6</Tab>
         </TabList>
 
         <TabPanels>
           <TabPanel>
-            <Text>Test</Text>
+            <Box>
+              <Flex
+                direction="column"
+                p={12}
+                alignItems="center"
+                justifyContent="top"
+                background="grey.100"
+              >
+                <Link href="mailto:vindennt@gmail.com">vindennt@gmail.com</Link>
+                <Link href="https://www.twitter.com/vindennt" target="_blank">
+                  Twitter
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/in/dennis-truong-111291264/"
+                  target="_blank"
+                ></Link>
+              </Flex>
+            </Box>
           </TabPanel>
           <TabPanel>
             <p>two!</p>
