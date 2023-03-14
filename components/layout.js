@@ -9,6 +9,12 @@ import {
   useColorModeValue,
   Stack,
   useColorMode,
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
+  Text,
 } from "@chakra-ui/react";
 import { FaGithub, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
@@ -107,6 +113,26 @@ export default function Layout() {
           </Box>
         ) : null}
       </Box>
+
+      <Tabs>
+        <TabList>
+          <Tab>One</Tab>
+          <Tab>Two</Tab>
+          <Tab>Three</Tab>
+        </TabList>
+
+        <TabPanels>
+          <TabPanel>
+            <Text>Test</Text>
+          </TabPanel>
+          <TabPanel>
+            <p>two!</p>
+          </TabPanel>
+          <TabPanel>
+            <p>three!</p>
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
     </>
   );
 }
