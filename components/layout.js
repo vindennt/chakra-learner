@@ -9,15 +9,15 @@ import {
   useColorModeValue,
   Stack,
   useColorMode,
+  Text,
 } from "@chakra-ui/react";
 import { FaGithub, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 const Links = [
-  { name: "About", to: "/" },
-  { name: "Projects", to: "/projects" },
-  { name: "Blog", to: "/blog" },
+  { name: "Programming", to: "/" },
   { name: "Art", to: "/art" },
+  { name: "Blog", to: "/blog" },
   { name: "Contact", to: "/contact" },
 ];
 
@@ -38,6 +38,9 @@ export default function Layout() {
           />
           {/* Mobile drop down menu*/}
           <HStack spacing={8} alignItems={"center"}>
+            <Box>
+              <Text as="b">dtruong</Text>
+            </Box>
             <HStack
               as={"nav"}
               spacing={4}
@@ -61,19 +64,6 @@ export default function Layout() {
             </HStack>
           </HStack>
           <Flex alignItems="center" gap="3.5">
-            <a href="https://www.github.com/vindennt" target="blank">
-              <IconButton aria-label="Github" icon={<FaGithub />} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/dennis-truong-111291264/"
-              target="blank"
-            >
-              <IconButton aria-label="LinkedIn" icon={<FaLinkedinIn />} />
-            </a>
-            <a href="https://twitter.com/vindennt" target="blank">
-              <IconButton aria-label="Twitter" icon={<FaTwitter />} />
-            </a>
-
             <IconButton
               aria-label="Toggle dark mode"
               onClick={toggleColorMode}
