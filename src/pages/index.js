@@ -14,16 +14,19 @@ import { Heading } from "@chakra-ui/react";
 import Layout from "../../components/layout";
 import { FaGithub, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 
-function ProfileTab({ text }) {
+function ProfileTab({ children }) {
   return (
     <Tab
       _selected={{
-        color: "white",
-        bg: "blue.500",
-        borderRadius: "8",
+        borderBottom: "2px",
+        mb: "2px",
+      }}
+      _hover={{
+        borderBottom: "2px",
+        borderColor: "gray.300",
       }}
     >
-      text
+      {children}
     </Tab>
   );
 }
@@ -55,30 +58,9 @@ export default function Home() {
             align="center"
           >
             <TabList>
-              <Tab
-                _selected={{
-                  borderBottom: "2px",
-                  mb: "2px",
-                }}
-              >
-                Bio
-              </Tab>
-              <Tab
-                _selected={{
-                  borderBottom: "2px",
-                  mb: "2px",
-                }}
-              >
-                Skills
-              </Tab>
-              <Tab
-                _selected={{
-                  borderBottom: "2px",
-                  mb: "2px",
-                }}
-              >
-                Projects
-              </Tab>
+              <ProfileTab>Bio</ProfileTab>
+              <ProfileTab>Skills</ProfileTab>
+              <ProfileTab>Projects</ProfileTab>
             </TabList>
             <TabPanels>
               <TabPanel>
