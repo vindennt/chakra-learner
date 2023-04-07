@@ -21,6 +21,7 @@ const Links = [
   { name: "About", to: "/" },
   { name: "Art", to: "/art" },
   { name: "Blog", to: "/blog" },
+  { name: "Travel", to: "/travel" },
   // { name: "Contact", to: "/contact" },
 ];
 
@@ -41,7 +42,7 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
       as={NextLink}
       borderRadius="8px"
       href={href}
-      scroll={false}
+      scroll="false"
       p={2}
       bg={active ? "teal.400" : undefined}
       target={target}
