@@ -40,6 +40,13 @@ export default function Home() {
         alignItems="center"
         direction="column"
       >
+      <Image
+          borderRadius="full"
+          boxSize="30vh"
+          objectFit="cover"
+          src="https://images.unsplash.com/photo-1531737212413-667205e1cda7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1034&q=80"
+          alt="profile"
+        />
         <Flex
           direction="column"
           background="grey.100"
