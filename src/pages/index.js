@@ -13,6 +13,7 @@ import {
 import { Heading } from "@chakra-ui/react";
 import Layout from "../../components/layout";
 import { FaGithub, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import Image from "next/image";
 
 function ProfileTab({ children }) {
   return (
@@ -41,10 +42,11 @@ export default function Home() {
         direction="column"
       >
       <Image
-          borderRadius="full"
           boxSize="30vh"
-          objectFit="cover"
-          src="https://images.unsplash.com/photo-1531737212413-667205e1cda7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1034&q=80"
+          width={500}
+          height={500}
+          // objectFit="cover"
+          src="/img/d.png"
           alt="profile"
         />
         <Flex
