@@ -18,14 +18,13 @@ import Image from "next/image";
 function ProfileTab({ children }) {
   return (
     <Tab
+      borderRadius= "8px"
       _selected={{
-        borderBottom: "2px",
+        bg: "teal.400",
         mb: "2px",
-        borderColor: "teal.400",
       }}
       _hover={{
-        borderBottom: "2px",
-        borderColor: "gray.300",
+        bg: "teal.100",
       }}
     >
       {children}
@@ -60,7 +59,7 @@ export default function Home() {
           <Heading mb={6}>Dennis Truong</Heading>
 
           <Text mb={6}>
-            Web developer and artist with experience in JavaScript, Java, C++,
+            Developer with experience in JavaScript, Java, C++,
             and Python.
           </Text>
 
@@ -72,7 +71,7 @@ export default function Home() {
           >
             <TabList>
               <ProfileTab>Bio</ProfileTab>
-              <ProfileTab>Skills</ProfileTab>
+              {/* <ProfileTab>Skills</ProfileTab> */}
               <ProfileTab>Projects</ProfileTab>
             </TabList>
             <TabPanels>
@@ -87,7 +86,7 @@ export default function Home() {
                   <Text>Hi im denis </Text>
                 </Flex>
               </TabPanel>
-              <TabPanel>
+              {/* <TabPanel>
                 <Flex
                   direction="column"
                   p={5}
@@ -97,7 +96,7 @@ export default function Home() {
                 >
                   <Text>Yes </Text>
                 </Flex>
-              </TabPanel>
+              </TabPanel> */}
               <TabPanel>
                 <Flex
                   direction="column"
@@ -115,8 +114,8 @@ export default function Home() {
         </Flex>
       </Flex>
       <Flex direction="column" p={5} alignItems="center" background="grey.100">
-        <Link p={4} href="mailto:vindennt@gmail.com">
-          vindennt@gmail.com
+        <Link p={4} href="mailto:truong.dennis00@gmail.com">
+          truong.dennis00@gmail.com
         </Link>
         <Flex gap="3.5">
           <a href="https://www.github.com/vindennt" target="blank">

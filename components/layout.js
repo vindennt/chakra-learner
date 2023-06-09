@@ -19,9 +19,9 @@ import { useRouter } from "next/router";
 
 const Links = [
   { name: "About", to: "/" },
-  { name: "Art", to: "/art" },
+  // { name: "Art", to: "/art" },
   { name: "Blog", to: "/blog" },
-  { name: "Travel", to: "/travel" },
+  // { name: "Travel", to: "/travel" },
   // { name: "Contact", to: "/contact" },
 ];
 
@@ -34,7 +34,7 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
           ? "none"
           : {
               textDecoration: "none",
-              bg: useColorModeValue("gray.300", "gray.700"),
+              bg: useColorModeValue("teal.200", "teal.700"),
             }
       }
       px={2}
