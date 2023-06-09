@@ -2,6 +2,7 @@ import { Box, Text, Flex, Link, Heading } from "@chakra-ui/react";
 import Layout from "../../components/layout";
 import { getSortedPostsData } from "../../lib/posts"
 import utilStyles from '../styles/utils.module.css';
+import Date from "../../components/date"
 
 
 export async function getStaticProps() {
@@ -14,33 +15,23 @@ export async function getStaticProps() {
 }
 
 
-// Blog.getInitialProps = () => {
-//   return {
-//     blogTitle: "dtruong Blog",
-//   };
-// };
-
-
 export default function Blog({allPostsData}) {
-
-
   return (
     <Box>
       <Layout></Layout>
       <Flex direction="column" p={12} alignItems="center">
         <Flex alignItems="left" justifyContent="left" direction="column">
-          <Heading>Title</Heading>
+          <Heading>Articles</Heading>
           {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
+            <Text key={id} padding={3}>
+              <Link color='teal.500' href={`posts/${id}`}>
               {title}
+              </Link>
               <br />
-              {id}
-              <br />
-              {date}
-            </li>
+              <Date dateString={date} />
+            </Text>
           ))}
 
-          
         </Flex>
       </Flex>
     </Box>
