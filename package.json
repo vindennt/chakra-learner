@@ -28,5 +28,10 @@
     "react-icons": "^4.8.0",
     "react-markdown": "^8.0.5",
     "react-router-dom": "^6.8.2"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
   }
 }
