@@ -45,7 +45,7 @@ export default function Home() {
           width={500}
           height={500}
           // objectFit="cover"
-          src="/img/d.png"
+          src="/images/d.png"
           alt="profile"
         />
         <Flex
