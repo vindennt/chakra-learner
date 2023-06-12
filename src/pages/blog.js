@@ -1,4 +1,4 @@
-import { Box, Text, Flex, Link, Heading } from "@chakra-ui/react";
+import { Box, Text, Flex, Link, Heading, SimpleGrid } from "@chakra-ui/react";
 import Layout from "../../components/layout";
 import { getSortedPostsData } from "../../lib/posts"
 import utilStyles from '../styles/utils.module.css';
@@ -21,22 +21,26 @@ export default function Blog({allPostsData}) {
       <Layout></Layout>
       <Flex
       direction="column"
-      p={12}
       alignItems="center">
         <Flex
         alignItems="left"
         justifyContent="left"
         direction="column">
-          <Heading>Articles</Heading>
+          <Heading m={10}>Articles</Heading>
+          <SimpleGrid columns={2}>
           {allPostsData.map(({ id, date, title }) => (
-            <Text paddingTop={5}>
-              <Link color='teal.500' href={`posts/${id}`}>
-              {title}
-              </Link>
-              <br />
-              <Date dateString={date} />
-            </Text>
+            <Box m={2} padding={3} borderRadius={5} bg={"white"} boxShadow={"lg"}>
+              <Text>
+                <Link color='teal.500' href={`posts/${id}`}>
+                {title}
+                </Link>
+                <br />
+                <Date dateString={date} />
+              </Text>
+            </Box>
+            
           ))}
+          </SimpleGrid>
 
         </Flex>
       </Flex>
