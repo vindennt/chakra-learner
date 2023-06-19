@@ -29,7 +29,7 @@ export default function Blog({allPostsData}) {
           <Heading m={10}>Articles</Heading>
           <SimpleGrid columns={2}>
           {allPostsData.map(({ id, date, title }) => (
-            <Box m={2} padding={3} borderRadius={5} bg={"white"} boxShadow={"lg"}>
+            <Box m={2} padding={3} border="1px" borderRadius={5} bg={"white"} boxShadow={"md"}>
               <Text>
                 <Link color='teal.500' href={`posts/${id}`}>
                 {title}
