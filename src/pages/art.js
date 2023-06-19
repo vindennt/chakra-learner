@@ -1,5 +1,5 @@
 import { Box, Text, Flex, Link, Image } from "@chakra-ui/react";
-import Layout from "../../components/layout";
+import Layout from "../../components/header";
 
 export default function Art() {
   return (

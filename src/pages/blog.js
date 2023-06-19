@@ -1,5 +1,5 @@
 import { Box, Text, Flex, Link, Heading, SimpleGrid } from "@chakra-ui/react";
-import Layout from "../../components/layout";
+import Header from "../../components/header";
 import { getSortedPostsData } from "../../lib/posts"
 import utilStyles from '../styles/utils.module.css';
 import Date from "../../components/date"
@@ -18,7 +18,7 @@ export async function getStaticProps() {
 export default function Blog({allPostsData}) {
   return (
     <Box>
-      <Layout></Layout>
+      <Header></Header>
       <Flex
       direction="column"
       alignItems="center">

@@ -53,7 +53,7 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
   );
 };
 
-const Layout = (props) => {
+const Header = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const { asPath } = useRouter();
@@ -114,4 +114,4 @@ const Layout = (props) => {
   );
 };
 
-export default Layout;
+export default Header;

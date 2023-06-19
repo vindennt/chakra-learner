@@ -11,7 +11,8 @@ import {
   IconButton,
 } from "@chakra-ui/react";
 import { Heading } from "@chakra-ui/react";
-import Layout from "../../components/layout";
+import Header from "../../components/header";
+import Footer from "../../components/footer";
 import { FaGithub, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import Image from "next/image";
 
@@ -35,7 +36,7 @@ function ProfileTab({ children }) {
 export default function Home() {
   return (
     <Box>
-      <Layout></Layout>
+      <Header></Header>
       <Flex //</Box>height="20vh"
         alignItems="center"
         direction="column"
@@ -113,7 +114,8 @@ export default function Home() {
           </Tabs>
         </Flex>
       </Flex>
-      <Flex direction="column" p={5} alignItems="center" background="grey.100">
+      <Footer></Footer>
+      {/* <Flex direction="column" p={5} alignItems="center" background="grey.100">
         <Link p={4} href="mailto:truong.dennis00@gmail.com">
           truong.dennis00@gmail.com
         </Link>
@@ -131,7 +133,7 @@ export default function Home() {
             <IconButton aria-label="Twitter" icon={<FaTwitter />} />
           </a>
         </Flex>
-      </Flex>
+      </Flex> */}
     </Box>
   );
 }

@@ -2,7 +2,7 @@
 //"https://www.pullrequest.com/blog/build-a-blog-with-nextjs-and-markdown/?ref=morioh.com&utm_source=morioh.com
 
 import React from "react";
-import Layout from "../../../components/layout";
+import Layout from "../../../components/header";
 import { Box, Text, Flex, Link, Heading, Container, Button } from "@chakra-ui/react";
 import matter from "gray-matter";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";

@@ -1,6 +1,6 @@
 import { Box, Text, Flex, Link, IconButton } from "@chakra-ui/react";
 import { FaGithub, FaTwitter, FaLinkedinIn } from "react-icons/fa";
-import Layout from "../../components/layout";
+import Layout from "../../components/header";
 
 export default function Contact() {
   return (
