@@ -24,22 +24,22 @@ const Footer = (props) => {
   const { asPath } = useRouter();
 
   return (
-    <Flex direction="column" p={5} alignItems="center" background="grey.100">
-        <Link p={4} href="mailto:truong.dennis00@gmail.com">
+    <Flex direction="column" marginTop={10} h={"25vh"} p={2} alignItems="center" bg={useColorModeValue("gray.100", "gray.900")}>
+        <Link p={3} href="mailto:truong.dennis00@gmail.com">
           truong.dennis00@gmail.com
         </Link>
-        <Flex gap="3.5">
+        <Flex gap="4">
           <a href="https://www.github.com/vindennt" target="blank">
-            <IconButton aria-label="Github" icon={<FaGithub />} />
+            <IconButton borderRadius={"12"} p={4} aria-label="Github" icon={<FaGithub />} bg={useColorModeValue("gray.300", "gray.600")}/>
           </a>
           <a
             href="https://www.linkedin.com/in/dennis-truong-111291264/"
             target="blank"
           >
-            <IconButton aria-label="LinkedIn" icon={<FaLinkedinIn />} />
+            <IconButton borderRadius={"12"} p={4} aria-label="LinkedIn" icon={<FaLinkedinIn />} bg={useColorModeValue("gray.300", "gray.600")}/>
           </a>
           <a href="https://twitter.com/vindennt" target="blank">
-            <IconButton aria-label="Twitter" icon={<FaTwitter />} />
+            <IconButton borderRadius={"12"} p={4} aria-label="Twitter" icon={<FaTwitter /> } bg={useColorModeValue("gray.300", "gray.600")}/>
           </a>
         </Flex>
       </Flex>

@@ -19,13 +19,13 @@ import Image from "next/image";
 function ProfileTab({ children }) {
   return (
     <Tab
-      borderRadius= "8px"
+      borderRadius= "12px"
       _selected={{
         bg: "teal.400",
         mb: "2px",
       }}
       _hover={{
-        bg: "teal.100",
+        bg: "teal.200",
       }}
     >
       {children}
@@ -115,25 +115,6 @@ export default function Home() {
         </Flex>
       </Flex>
       <Footer></Footer>
-      {/* <Flex direction="column" p={5} alignItems="center" background="grey.100">
-        <Link p={4} href="mailto:truong.dennis00@gmail.com">
-          truong.dennis00@gmail.com
-        </Link>
-        <Flex gap="3.5">
-          <a href="https://www.github.com/vindennt" target="blank">
-            <IconButton aria-label="Github" icon={<FaGithub />} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/dennis-truong-111291264/"
-            target="blank"
-          >
-            <IconButton aria-label="LinkedIn" icon={<FaLinkedinIn />} />
-          </a>
-          <a href="https://twitter.com/vindennt" target="blank">
-            <IconButton aria-label="Twitter" icon={<FaTwitter />} />
-          </a>
-        </Flex>
-      </Flex> */}
     </Box>
   );
 }

@@ -40,7 +40,7 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
       px={2}
       py={1}
       as={NextLink}
-      borderRadius="8px"
+      borderRadius={"12"}
       href={href}
       scroll="false"
       p={2}
@@ -63,6 +63,7 @@ const Header = (props) => {
       <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
+            borderRadius={"12"}
             size={"md"}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             aria-label={"Open Menu"}
@@ -88,9 +89,12 @@ const Header = (props) => {
           </HStack>
           <Flex alignItems="center" gap="3.5">
             <IconButton
+              borderRadius={"12"}
               aria-label="Toggle dark mode"
               onClick={toggleColorMode}
-              colorScheme={colorMode === "light" ? "blackAlpha" : "teal"}
+              // bg={colorMode === "light" ? "gray.300" : "teal.300"}
+              colorScheme="teal"
+              borderRadius={"12"}
             >
               {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
             </IconButton>
