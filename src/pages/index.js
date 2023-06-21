@@ -7,14 +7,16 @@ import {
   TabPanels,
   TabPanel,
   TabList,
+  Image,
+  Stack,
   Link,
+  Heading,
   IconButton,
 } from "@chakra-ui/react";
-import { Heading } from "@chakra-ui/react";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import { FaGithub, FaTwitter, FaLinkedinIn } from "react-icons/fa";
-import Image from "next/image";
+// import Image from "next/image";
 
 function ProfileTab({ children }) {
   return (
@@ -22,7 +24,6 @@ function ProfileTab({ children }) {
       borderRadius= "12px"
       _selected={{
         bg: "teal.400",
-        mb: "2px",
       }}
       _hover={{
         bg: "teal.200",
@@ -42,17 +43,17 @@ export default function Home() {
         direction="column"
       >
       <Image
-          boxSize="30vh"
-          width={500}
-          height={500}
-          // objectFit="cover"
+          p={10}
+          boxSize="lg"
+          borderRadius="full"
+
           src="/images/d.png"
           alt="profile"
         />
         <Flex
           direction="column"
           background="grey.100"
-          p={12}
+
           rounded={6}
           alignItems="center"
           justifyContent="top"
@@ -72,32 +73,24 @@ export default function Home() {
           >
             <TabList>
               <ProfileTab>Bio</ProfileTab>
-              {/* <ProfileTab>Skills</ProfileTab> */}
               <ProfileTab>Projects</ProfileTab>
             </TabList>
             <TabPanels>
-              <TabPanel>
-                <Flex
-                  direction="column"
+            {/* Bio tab contents */}
+              <TabPanel> 
+                <Stack
                   p={5}
-                  alignItems="center"
-                  justifyContent="top"
                   background="grey.100"
+                  maxW="lg"
                 >
-                  <Text>Hi im denis </Text>
-                </Flex>
+                  <Text>Hey! My name is Dennis and I'm a computer science student with a background in biological research. </Text>
+                  <Heading size={"md"} >Education</Heading>
+                  <Heading size={"sm"}>The University of British Columbia </Heading>
+                  <Text>Bachelor of Computer Science (2022 - Present)</Text>
+                  <Text>Bachelor of Science, Honours in Animal Biology (2018 - 2022)</Text>
+                </Stack>
               </TabPanel>
-              {/* <TabPanel>
-                <Flex
-                  direction="column"
-                  p={5}
-                  alignItems="center"
-                  justifyContent="top"
-                  background="grey.100"
-                >
-                  <Text>Yes </Text>
-                </Flex>
-              </TabPanel> */}
+              {/* Projects tab contents */}
               <TabPanel>
                 <Flex
                   direction="column"
