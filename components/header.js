@@ -94,7 +94,6 @@ const Header = (props) => {
               onClick={toggleColorMode}
               // bg={colorMode === "light" ? "gray.300" : "teal.300"}
               colorScheme="teal"
-              borderRadius={"12"}
             >
               {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
             </IconButton>

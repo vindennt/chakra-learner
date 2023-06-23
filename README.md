@@ -2,11 +2,4 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Purpose
 
-Portfolio website using ChakraUI
-
-## To Do
-
-- Resume landing page
-- Blog
-- Link to redirect to vindennt art
-- Analytics
+Portfolio website using React and ChakraUI

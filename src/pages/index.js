@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <Box>
       <Header></Header>
-      <Flex //</Box>height="20vh"
+      <Flex
         alignItems="center"
         direction="column"
         minH="100vh"
@@ -60,7 +60,7 @@ export default function Home() {
           alignItems="center"
           justifyContent="top"
         >
-          <Heading mb={6}>Dennis Truong</Heading>
+          <Heading size={"2xl"} mb={6}>Dennis Truong</Heading>
 
           <Text mb={6}>
             Student with experience in JavaScript, Java, C++, and Python.
@@ -71,8 +71,8 @@ export default function Home() {
             colorScheme="teal"
             defaultIndex={0}
             align="center"
-            bg={"BlackAlpha50"}
-            maxW={"600px"}
+            bg={"BlackAlpha.50"}
+            maxW={"610px"}
           >
             <TabList>
               <ProfileTab>Profile</ProfileTab>

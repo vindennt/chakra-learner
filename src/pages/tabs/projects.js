@@ -13,66 +13,115 @@ import {
     Heading,
     IconButton,
     useColorMode,
+    SimpleGrid,
+    Button,
+    Wrap,
+    WrapItem,
+    Center
   } from "@chakra-ui/react";
+  import { FaChevronLeft } from "react-icons/fa";
+
+const Completion = {
+  PLANNING: "Planning",
+	INPROGRESS: "In Development",
+	COMPLETE: "Complete",
+  SUPPORTED: "Complete and Supported"
+}
+
+const ProjectList = [
+  { name: "First", description: "Hey! My name is Dennis and I'm a student who pivoted to studying Computer Science aftering finishing an Honours in Biology. Right now, I'm absorbed with computer hardware, mobile app development, and front-end design",
+  technologies: "java", image: "d.png", completion: Completion.COMPLETE, link: "/"},
+  { name: "Second", description: "Desc", technologies: "Java, Java, Java, Java", image: "d.png", completion: Completion.PLANNING, link: "/"},
+  { name: "Third", description: "Desc", technologies: "Java, Java, Java, Java", image: "d.png", completion: Completion.INPROGRESS, link: "/"},
+  { name: "Fourth", description: "Desc", technologies: "Java, Java, Java, Java", image: "d.png", completion: Completion.SUPPORTED, link: "/"},
+];
+
+
+
+const StatusIndicator = ( {completion} ) => {
+  const { colorMode } = useColorMode();
+  let colour = (colorMode === "light" ? "gray.300" : "gray.600"); // default
+  let text = completion; // default
+
+  switch(text) {
+    case Completion.COMPLETE:
+      colour = (colorMode === "light" ? "gray.300" : "gray.600");
+      break;
+    case Completion.INPROGRESS:
+      colour = (colorMode === "light" ? "yellow.300" : "yellow.600");
+      break;
+    case Completion.PLANNING:
+      colour = (colorMode === "light" ? "blue.300" : "blue.600");
+      break;
+    case Completion.SUPPORTED:
+      colour = (colorMode === "light" ? "green.300" : "green.600");
+      break;
+    default:
+      text = "Unknown";
+      break;
+  }
+
+  return (
+    <Wrap >
+      <WrapItem
+        bg={colour}
+        m={1}
+        marginTop={4}
+        borderRadius={12}
+        >
+        <Center
+          paddingTop={1.5}
+          paddingBottom={1.5}
+          paddingLeft={4}
+          paddingRight={4}
+          >
+          <Text fontSize={14}>{text}</Text>
+        </Center>
+      </WrapItem>
+    </Wrap>
+  );
+};
 
 const Projects = () => {
+  const { colorMode } = useColorMode();
     return (
-                <Stack p={5} background="grey.100" maxW="xlg">
-                  <Text align="left">
-                    Hey! My name is Dennis and I'm a student that pivoted to studying Computer Science
-                    aftering finishing an Honours in Biology. Right now, I'm absorbed in computer hardware, mobile app development, and front-end design.
-                  </Text>
-                  <br />
-                  <Text>
-                    I dove into the accelerated second bachelors degree
-                    for Computer Science (BCS) at the University of British Columbia
-                    after seeing the critical role a tailored program played in my thesis
-                    research on fruit fly memory formation. During my degree, I hope to
-                    deepen my understanding of how programs communicate with computer hardware
-                    and to catch up to the breakneck pace of today's technological growth.
-                  </Text>
-                  <br />
-                  <Heading size={"md"}>Education</Heading>
-                  <Heading size={"sm"}>
-                    The University of British Columbia
-                  </Heading>
-                  <Text as={"i"}>Vancouver, BC</Text>
-                  <Text paddingLeft={5}>
-                    Bachelor of Computer Science (2022 - Present)
-                  </Text>
-                  <Text paddingLeft={5}>
-                    Bachelor of Science, Honours in Animal Biology (2018 - 2022)
-                  </Text>
-                  <br />
-                  <Heading size={"md"}>Work Experience</Heading>
-                  <Heading size={"sm"}>Research Assistant</Heading>
-                  <Text as={"i"}>Vancouver, BC</Text>
-                  <Text paddingLeft={5}>
-                    During the summer of 2022, I followed up with my undergraduate
-                    thesis' work by characterizing the feeding behaviour of different
-                    fruit fly lines with the help of Principle Investigator Dr.
-                    Michael Gordon at UBC's{" "}
-                    <Link
-                      href="https://www.zoology.ubc.ca/~gordon/index.html"
-                      color={"teal.500"}
-                      target="blank"
-                    >
-                      Gordon Lab
-                    </Link>
-                    .
-                  </Text>
+      <SimpleGrid columns={1} spacing={10} marginTop={30}>
+          {/* {Links.map((link) => (
+                <LinkItem key={link.name} href={link.to} path={asPath}>
+                  {link.name}
+                </LinkItem> */}
+            {ProjectList.map(( project ) => (
+              <Box
+                bg={(colorMode === "light" ? "gray.100" : "whiteAlpha.100")}
+                boxShadow={"xl"}
 
-                  <br />
-                  <Text paddingLeft={5}>
-                    Through confocal microscopy and behavioural assessments, I
-                    analyzed 21 genetic lines and compared the fluorescent
-                    imaging of their taste neurons to baseline wildtype flies.
-                    My project helped expand the current fruit fly model of
-                    visual memory formation and taste processing by 
-                    revealing behavioural anomalies and taste neuron deficiencies
-                    for certain genetic lines.
-                  </Text>
-                </Stack>
+                _hover={{bg: (colorMode === "light" ? "gray.50" : "whiteAlpha.200"),
+                boxShadow: "2xl"}}
+
+                border="0px"
+                borderRadius={12}
+              >
+              <a href="">
+              <Box padding={5}>
+                <Heading size={"lg"}>{project.name}</Heading>
+
+                <Text>{project.description}</Text>
+                <br />
+                <Text as="i">Skills: {project.technologies}</Text>
+                <br />
+                <Image
+                  minW={"100%"}
+                  borderRadius={12}
+
+                  src={`/images/${project.image}`}
+                  alt="Project Image"
+                />
+                <StatusIndicator completion={project.completion}></StatusIndicator>
+                </Box>
+                </a>
+              </Box>
+            ))}
+    </SimpleGrid>
   );
 };
 
