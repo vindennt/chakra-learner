@@ -86,16 +86,13 @@ const Projects = () => {
   const { colorMode } = useColorMode();
     return (
       <SimpleGrid columns={1} spacing={10} marginTop={30}>
-          {/* {Links.map((link) => (
-                <LinkItem key={link.name} href={link.to} path={asPath}>
-                  {link.name}
-                </LinkItem> */}
+      <Text align={"center"}>Click a project to visit its GitHub repository!</Text>
             {ProjectList.map(( project ) => (
               <Box
-                bg={(colorMode === "light" ? "gray.100" : "whiteAlpha.100")}
+                bg={(colorMode === "light" ? "gray.200" : "whiteAlpha.100")}
                 boxShadow={"xl"}
 
-                _hover={{bg: (colorMode === "light" ? "gray.50" : "whiteAlpha.200"),
+                _hover={{bg: (colorMode === "light" ? "gray.100" : "whiteAlpha.200"),
                 boxShadow: "2xl"}}
 
                 border="0px"
