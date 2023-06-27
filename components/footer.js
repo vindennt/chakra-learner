@@ -38,7 +38,7 @@ const Footer = (props) => {
       <Flex gap="4">
         <a href="https://www.github.com/vindennt" target="blank">
           <IconButton
-            borderRadius={"12"}
+            borderRadius={"full"}
             aria-label="Github"
             icon={<FaGithub />}
             bg={useColorModeValue("gray.300", "gray.600")}
@@ -49,7 +49,7 @@ const Footer = (props) => {
           target="blank"
         >
           <IconButton
-            borderRadius={"12"}
+            borderRadius={"full"}
             aria-label="LinkedIn"
             icon={<FaLinkedinIn />}
             bg={useColorModeValue("gray.300", "gray.600")}

@@ -1,60 +1,93 @@
 import {
-    Box,
-    Flex,
-    Text,
-    Tabs,
-    Tab,
-    TabPanels,
-    TabPanel,
-    TabList,
-    Image,
-    Stack,
-    Link,
-    Heading,
-    IconButton,
-    useColorMode,
-    SimpleGrid,
-    Button,
-    Wrap,
-    WrapItem,
-    Center
-  } from "@chakra-ui/react";
-  import { FaChevronLeft } from "react-icons/fa";
+  Box,
+  Flex,
+  Text,
+  Tabs,
+  Tab,
+  TabPanels,
+  TabPanel,
+  TabList,
+  Image,
+  Stack,
+  Link,
+  Heading,
+  IconButton,
+  useColorMode,
+  SimpleGrid,
+  Button,
+  Wrap,
+  WrapItem,
+  Center,
+} from "@chakra-ui/react";
+import { FaChevronLeft } from "react-icons/fa";
 
-const Completion = {
+const Progress = {
   PLANNING: "Planning",
-	INPROGRESS: "In Development",
-	COMPLETE: "Complete",
-  SUPPORTED: "Complete and Supported"
-}
+  INPROGRESS: "In Development",
+  COMPLETE: "Complete",
+  SUPPORTED: "Complete and Supported",
+};
 
 const ProjectList = [
-  { name: "First", description: "Hey! My name is Dennis and I'm a student who pivoted to studying Computer Science aftering finishing an Honours in Biology. Right now, I'm absorbed with computer hardware, mobile app development, and front-end design",
-  technologies: "java", image: "d.png", completion: Completion.COMPLETE, link: "/"},
-  { name: "Second", description: "Desc", technologies: "Java, Java, Java, Java", image: "d.png", completion: Completion.PLANNING, link: "/"},
-  { name: "Third", description: "Desc", technologies: "Java, Java, Java, Java", image: "d.png", completion: Completion.INPROGRESS, link: "/"},
-  { name: "Fourth", description: "Desc", technologies: "Java, Java, Java, Java", image: "d.png", completion: Completion.SUPPORTED, link: "/"},
+  {
+    name: "Sustainability Website: 2023 Google Solution Challenge",
+    description: "",
+    technologies: "JavaScript, React",
+    image: "d.png",
+    progress: Progress.COMPLETE,
+    link: "https://github.com/vindennt/gsc-2023",
+  },
+  {
+    name: "Data Science and Analyst Salary Comparison",
+    description: "Desc",
+    technologies: "Python",
+    image: "d.png",
+    progress: Progress.COMPLETE,
+    link: "https://github.com/vindennt/stat-201-project-group-10/blob/main/Final Project Group 10.ipynb",
+  },
+  {
+    name: "Heart Disease Predictor",
+    description: "Desc",
+    technologies: "Python",
+    image: "d.png",
+    progress: Progress.COMPLETE,
+    link: "/heart-disease-model",
+  },
+  {
+    name: "Flashcard Manager",
+    description: "Desc",
+    technologies: "Java",
+    image: "d.png",
+    progress: Progress.COMPLETE,
+    link: "/",
+  },
+  {
+    name: "Client Website Redesign",
+    description: "Desc",
+    technologies: "Balsamiq",
+    image: "d.png",
+    progress: Progress.COMPLETE,
+    link: "/",
+  },
 ];
 
-
-
-const StatusIndicator = ( {completion} ) => {
+const StatusIndicator = ({ progress }) => {
   const { colorMode } = useColorMode();
-  let colour = (colorMode === "light" ? "gray.300" : "gray.600"); // default
-  let text = completion; // default
+  let colour = colorMode === "light" ? "gray.300" : "gray.600"; // default
+  let text = progress; // default
 
-  switch(text) {
-    case Completion.COMPLETE:
-      colour = (colorMode === "light" ? "gray.300" : "gray.600");
+  switch (text) {
+    case Progress.COMPLETE:
+      colour = colorMode === "light" ? "gray.300" : "gray.600";
       break;
-    case Completion.INPROGRESS:
-      colour = (colorMode === "light" ? "yellow.300" : "yellow.600");
+    case Progress.INPROGRESS:
+      colour = colorMode === "light" ? "yellow.300" : "yellow.600";
       break;
-    case Completion.PLANNING:
-      colour = (colorMode === "light" ? "blue.300" : "blue.600");
+    case Progress.PLANNING:
+      colour = colorMode === "light" ? "blue.300" : "blue.600";
       break;
-    case Completion.SUPPORTED:
-      colour = (colorMode === "light" ? "green.300" : "green.600");
+    case Progress.SUPPORTED:
+      colour = colorMode === "light" ? "green.300" : "green.600";
       break;
     default:
       text = "Unknown";
@@ -62,19 +95,14 @@ const StatusIndicator = ( {completion} ) => {
   }
 
   return (
-    <Wrap >
-      <WrapItem
-        bg={colour}
-        m={1}
-        marginTop={4}
-        borderRadius={12}
-        >
+    <Wrap>
+      <WrapItem bg={colour} marginTop={4} borderRadius={12}>
         <Center
           paddingTop={1.5}
           paddingBottom={1.5}
           paddingLeft={4}
           paddingRight={4}
-          >
+        >
           <Text fontSize={14}>{text}</Text>
         </Center>
       </WrapItem>
@@ -84,40 +112,39 @@ const StatusIndicator = ( {completion} ) => {
 
 const Projects = () => {
   const { colorMode } = useColorMode();
-    return (
-      <SimpleGrid columns={1} spacing={10} marginTop={30}>
-      <Text align={"center"}>Click a project to visit its GitHub repository!</Text>
-            {ProjectList.map(( project ) => (
-              <Box
-                bg={(colorMode === "light" ? "gray.200" : "whiteAlpha.100")}
-                boxShadow={"xl"}
-
-                _hover={{bg: (colorMode === "light" ? "gray.100" : "whiteAlpha.200"),
-                boxShadow: "2xl"}}
-
-                border="0px"
+  return (
+    <SimpleGrid columns={1} spacing={10} marginTop={30}>
+      <Text align={"center"}>Click a project to view.</Text>
+      {ProjectList.map((project) => (
+        <Box
+          bg={colorMode === "light" ? "gray.100" : "whiteAlpha.100"}
+          boxShadow={"lg"}
+          _hover={{
+            bg: colorMode === "light" ? "gray.50" : "whiteAlpha.200",
+            boxShadow: "xl",
+          }}
+          border="0px"
+          borderRadius={12}
+        >
+          <a href={project.link} target="blank">
+            <Box padding={8}>
+              <Heading size={"md"}>{project.name}</Heading>
+              <Text as="i">{project.technologies}</Text>
+              <br />
+              <br />
+              <Text>{project.description}</Text>
+              <br />
+              <Image
+                minW={"100%"}
                 borderRadius={12}
-              >
-              <a href="">
-              <Box padding={5}>
-                <Heading size={"lg"}>{project.name}</Heading>
-
-                <Text>{project.description}</Text>
-                <br />
-                <Text as="i">Skills: {project.technologies}</Text>
-                <br />
-                <Image
-                  minW={"100%"}
-                  borderRadius={12}
-
-                  src={`/images/${project.image}`}
-                  alt="Project Image"
-                />
-                <StatusIndicator completion={project.completion}></StatusIndicator>
-                </Box>
-                </a>
-              </Box>
-            ))}
+                src={`/images/${project.image}`}
+                alt="Project Image"
+              />
+              <StatusIndicator progress={project.progress}></StatusIndicator>
+            </Box>
+          </a>
+        </Box>
+      ))}
     </SimpleGrid>
   );
 };

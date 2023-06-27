@@ -18,8 +18,8 @@ import Header from "../../components/header";
 import Footer from "../../components/footer";
 import { FaGithub, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 // import Image from "next/image";
-import Profile from "../pages/tabs/profile"
-import Projects from "../pages/tabs/projects"
+import Profile from "../pages/tabs/profile";
+import Projects from "../pages/tabs/projects";
 
 function ProfileTab({ children }) {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -43,11 +43,7 @@ export default function Home() {
   return (
     <Box>
       <Header></Header>
-      <Flex
-        alignItems="center"
-        direction="column"
-        minH="100vh"
-      >
+      <Flex alignItems="center" direction="column" minH="100vh">
         <Image
           p={10}
           boxSize="lg"
@@ -55,12 +51,10 @@ export default function Home() {
           src="/images/d.png"
           alt="profile"
         />
-        <Flex
-          direction="column"
-          alignItems="center"
-          justifyContent="top"
-        >
-          <Heading size={"2xl"} mb={6}>Dennis Truong</Heading>
+        <Flex direction="column" alignItems="center" justifyContent="top">
+          <Heading size={"2xl"} mb={6}>
+            Dennis Truong
+          </Heading>
 
           <Text mb={6}>
             Student with experience in JavaScript, Java, C++, and Python.
@@ -77,7 +71,7 @@ export default function Home() {
             <TabList>
               <ProfileTab>Profile</ProfileTab>
               <ProfileTab>Projects</ProfileTab>
-              <ProfileTab>Hobbies</ProfileTab>
+              {/* <ProfileTab>Hobbies</ProfileTab> */}
             </TabList>
             <TabPanels>
               <TabPanel align="left">
