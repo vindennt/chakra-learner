@@ -31,7 +31,8 @@ const Progress = {
 const ProjectList = [
   {
     name: "Sustainability Website: 2023 Google Solution Challenge",
-    description: "",
+    description:
+      "Electrical recycling depot locator and platform to promote sustainable textile vendors. Interactive map implemented with Leaflet.",
     technologies: "JavaScript, React",
     image: "d.png",
     progress: Progress.COMPLETE,
@@ -59,7 +60,7 @@ const ProjectList = [
     technologies: "Java",
     image: "d.png",
     progress: Progress.COMPLETE,
-    link: "/",
+    link: "https://github.com/vindennt/flashcard-manager",
   },
   {
     name: "Client Website Redesign",
@@ -67,7 +68,16 @@ const ProjectList = [
     technologies: "Balsamiq",
     image: "d.png",
     progress: Progress.COMPLETE,
-    link: "/",
+    link: "https://ischool.ubc.ca/news/how-to-design-a-re-design-ischool-students-and-community/",
+  },
+  {
+    name: "Translink Station Trip Planner",
+    description:
+      "Inter-station trip planner. Using skytrains stations as travel landmarks may become more common in the Lower Mainland's future as the train network expands. Translink's API should be robust for future station construction and serve as learning experience for using APIs.",
+    technologies: "JavaScript",
+    image: "d.png",
+    progress: Progress.PLANNING,
+    link: "https://ischool.ubc.ca/news/how-to-design-a-re-design-ischool-students-and-community/",
   },
 ];
 
@@ -114,7 +124,7 @@ const Projects = () => {
   const { colorMode } = useColorMode();
   return (
     <SimpleGrid columns={1} spacing={10} marginTop={30}>
-      <Text align={"center"}>Click a project to view.</Text>
+      <Text align={"center"}>Click a project to view it in a new tab.</Text>
       {ProjectList.map((project) => (
         <Box
           bg={colorMode === "light" ? "gray.100" : "whiteAlpha.100"}
