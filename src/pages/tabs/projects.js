@@ -34,51 +34,55 @@ const ProjectList = [
     description:
       "Electrical recycling depot locator and platform to promote sustainable textile vendors. Interactive map implemented with Leaflet.",
     technologies: "JavaScript, React",
-    image: "d.png",
+    image: "GSC2023.png",
     progress: Progress.COMPLETE,
     link: "https://github.com/vindennt/gsc-2023",
   },
   {
-    name: "Data Science and Analyst Salary Comparison",
-    description: "Desc",
+    name: "Data Scientist v.s. Analysts: Comparison of salary and remote work options",
+    description:
+      "Used tidyverse library to aid statistical inferences about Data Scientists and Analysts from all company sizes and all experience levels. We wanted to explore wich profession was paid more and which one was more likely to work remotely.",
     technologies: "Python",
-    image: "d.png",
+    image: "data-salary-comparison.png",
     progress: Progress.COMPLETE,
     link: "https://github.com/vindennt/stat-201-project-group-10/blob/main/Final Project Group 10.ipynb",
   },
   {
     name: "Heart Disease Predictor",
-    description: "Desc",
+    description:
+      "Applied K-Nearest Neighbours classifcation algorithm to achieve a model that could predict heart disease with 88% accuracy against the against the UCI's Cleveland Heart Disease dataset.",
     technologies: "Python",
-    image: "d.png",
+    image: "heart-model.png",
     progress: Progress.COMPLETE,
     link: "/heart-disease-model",
   },
   {
     name: "Flashcard Manager",
-    description: "Desc",
+    description:
+      "App that can edit and review flashcard decks, as well as save and load them to the disk as JSON files.",
     technologies: "Java",
-    image: "d.png",
+    image: "flashcard-manager.png",
     progress: Progress.COMPLETE,
     link: "https://github.com/vindennt/flashcard-manager",
   },
   {
     name: "Client Website Redesign",
-    description: "Desc",
+    description:
+      "Worked with the Learning Buddies Network to redesign the parent registration system for their website. Performed user research and data analysis with the creation of empathy maps and user personas. Balsamiq was used to create wireframe prototypes for presentation.",
     technologies: "Balsamiq",
-    image: "d.png",
+    image: "lbn-redesign.png",
     progress: Progress.COMPLETE,
     link: "https://ischool.ubc.ca/news/how-to-design-a-re-design-ischool-students-and-community/",
   },
-  {
-    name: "Translink Station Trip Planner",
-    description:
-      "Inter-station trip planner. Using skytrains stations as travel landmarks may become more common in the Lower Mainland's future as the train network expands. Translink's API should be robust for future station construction and serve as learning experience for using APIs.",
-    technologies: "JavaScript",
-    image: "d.png",
-    progress: Progress.PLANNING,
-    link: "https://ischool.ubc.ca/news/how-to-design-a-re-design-ischool-students-and-community/",
-  },
+  // {
+  //   name: "Translink Station Trip Planner",
+  //   description:
+  //     "Inter-station trip planner. Using skytrains stations as travel landmarks may become more common in the Lower Mainland's future as the train network expands. Translink's API should be robust for future station construction and serve as learning experience for using APIs.",
+  //   technologies: "JavaScript",
+  //   image: "d.png",
+  //   progress: Progress.PLANNING,
+  //   link: "/",
+  // },
 ];
 
 const StatusIndicator = ({ progress }) => {
@@ -138,12 +142,13 @@ const Projects = () => {
         >
           <a href={project.link} target="blank">
             <Box padding={8}>
-              <Heading size={"md"}>{project.name}</Heading>
+              <Heading size={"md"} marginBottom={1}>
+                {project.name}
+              </Heading>
               <Text as="i">{project.technologies}</Text>
               <br />
               <br />
-              <Text>{project.description}</Text>
-              <br />
+              <Text marginBottom={3}>{project.description}</Text>
               <Image
                 minW={"100%"}
                 borderRadius={12}
