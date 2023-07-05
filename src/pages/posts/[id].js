@@ -1,17 +1,10 @@
 // code reference: Telmo Goncalves
 //"https://www.pullrequest.com/blog/build-a-blog-with-nextjs-and-markdown/?ref=morioh.com&utm_source=morioh.com
 
-import React from "react";
+import { React } from "react";
+import Link from "next/link";
 import Layout from "../../../components/header";
-import {
-  Box,
-  Text,
-  Flex,
-  Link,
-  Heading,
-  Container,
-  Button,
-} from "@chakra-ui/react";
+import { Box, Text, Flex, Heading, Container, Button } from "@chakra-ui/react";
 import matter from "gray-matter";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
 import ReactMarkdown from "react-markdown";
@@ -55,7 +48,7 @@ function PostTemplate({ content, data }) {
           <ReactMarkdown children={content} />
 
           <Container alignContent="flex-start" marginBottom="50px">
-            <a href="/blog/">
+            <Link href="/blog/">
               <Button
                 marginTop={10}
                 leftIcon={<FaChevronLeft />}
@@ -64,7 +57,7 @@ function PostTemplate({ content, data }) {
               >
                 Back to blog
               </Button>
-            </a>
+            </Link>
           </Container>
         </Container>
       </Flex>

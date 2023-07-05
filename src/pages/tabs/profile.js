@@ -19,10 +19,10 @@ const Profile = () => {
   return (
     <Stack p={5} background="grey.100" maxW="xlg">
       <Text align="left">
-        Hey! My name is Dennis and I'm a student who pivoted to studying
-        Computer Science after finishing an Honours in Biology. Right now, I'm
-        absorbed with computer hardware, mobile app development, and front-end
-        design.
+        Hey! My name is Dennis and I&apos;m a student who pivoted to studying
+        Computer Science after finishing an Honours in Biology. Right now,
+        I&apos;m absorbed with computer hardware, mobile app development, and
+        front-end design.
       </Text>
       <br />
       <Text>
@@ -32,7 +32,7 @@ const Profile = () => {
         thesis research on fruit fly memory formation. During my studies, I hope
         to use the skills I gained during my Biology degree to deepen my
         understanding of how programs communicate with hardware and to catch up
-        to the breakneck pace of today's technological integration.
+        to the breakneck pace of today&apos;s technological integration.
       </Text>
       <br />
       <Heading size={"md"}>Education</Heading>
@@ -47,10 +47,10 @@ const Profile = () => {
       <Heading size={"sm"}>Research Assistant</Heading>
       <Text as={"i"}>Vancouver, BC</Text>
       <Text paddingLeft={5}>
-        During the summer of 2022, I followed up with my undergraduate thesis'
-        work by characterizing the feeding behaviour of different fruit fly
-        lines with the help of Principle Investigator Dr. Michael Gordon at
-        UBC's{" "}
+        During the summer of 2022, I followed up with my undergraduate
+        thesis&apos; work by characterizing the feeding behaviour of different
+        fruit fly lines with the help of Principle Investigator Dr. Michael
+        Gordon at UBC&apos;s{" "}
         <Link
           href="https://www.zoology.ubc.ca/~gordon/index.html"
           color={"teal.500"}

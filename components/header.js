@@ -20,13 +20,15 @@ import { useRouter } from "next/router";
 const Links = [
   { name: "About", to: "/" },
   // { name: "Art", to: "/art" },
-  // { name: "Blog", to: "/blog" },
+  { name: "Blog", to: "/blog" },
   // { name: "Travel", to: "/travel" },
   // { name: "Contact", to: "/contact" },
 ];
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href;
+  const teal = useColorModeValue("teal.200", "teal.700"); // set teal hue for dark mode
+
   return (
     <Link
       _hover={
@@ -34,7 +36,7 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
           ? "none"
           : {
               textDecoration: "none",
-              bg: useColorModeValue("teal.200", "teal.700"),
+              bg: teal,
             }
       }
       px={2}
@@ -60,7 +62,7 @@ const Header = (props) => {
 
   return (
     <>
-      <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
+      <Box bg={colorMode === "light" ? "gray.100" : "gray.900"} px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
             borderRadius={"12"}

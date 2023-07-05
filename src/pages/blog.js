@@ -30,10 +30,11 @@ export default function Blog({ allPostsData }) {
       <Header></Header>
       <Flex direction="column" alignItems="center" h="100vh">
         <Flex alignItems="center" justifyContent="left" direction="column">
-          <Heading m={10} >Articles</Heading>
+          <Heading m={10}>Articles</Heading>
           <SimpleGrid columns={1}>
             {allPostsData.map(({ id, date, title }) => (
               <Box
+                key={id}
                 m={2}
                 padding={3}
                 border="2px"

@@ -9,7 +9,6 @@ import {
   TabList,
   Image,
   Stack,
-  Link,
   Heading,
   IconButton,
   useColorMode,
@@ -19,6 +18,7 @@ import {
   WrapItem,
   Center,
 } from "@chakra-ui/react";
+import Link from "next/link";
 import { FaChevronLeft } from "react-icons/fa";
 
 const Progress = {
@@ -140,7 +140,7 @@ const Projects = () => {
           border="0px"
           borderRadius={12}
         >
-          <a href={project.link} target="blank">
+          <Link href={project.link} target="blank">
             <Box padding={8}>
               <Heading size={"md"} marginBottom={1}>
                 {project.name}
@@ -157,7 +157,7 @@ const Projects = () => {
               />
               <StatusIndicator progress={project.progress}></StatusIndicator>
             </Box>
-          </a>
+          </Link>
         </Box>
       ))}
     </SimpleGrid>
