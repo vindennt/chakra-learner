@@ -20,7 +20,7 @@ import { useRouter } from "next/router";
 const Links = [
   { name: "About", to: "/" },
   // { name: "Art", to: "/art" },
-  { name: "Blog", to: "/blog" },
+  // { name: "Blog", to: "/blog" },
   // { name: "Travel", to: "/travel" },
   // { name: "Contact", to: "/contact" },
 ];
