@@ -131,6 +131,7 @@ const Projects = () => {
       <Text align={"center"}>Click a project to view it in a new tab.</Text>
       {ProjectList.map((project) => (
         <Box
+          key={project.name}
           bg={colorMode === "light" ? "gray.100" : "whiteAlpha.100"}
           boxShadow={"lg"}
           _hover={{

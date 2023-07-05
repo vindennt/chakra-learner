@@ -13,11 +13,9 @@ import fs from "fs";
 import Date from "../../../components/date";
 import { FaChevronLeft } from "react-icons/fa";
 
-<ReactMarkdown
-  components={ChakraUIRenderer()}
-  children={matter.content}
-  skipHtml
-/>;
+<ReactMarkdown components={ChakraUIRenderer()} skipHtml>
+  {matter.content}
+</ReactMarkdown>;
 
 function PostTemplate({ content, data }) {
   const frontmatter = data;
@@ -45,7 +43,7 @@ function PostTemplate({ content, data }) {
             <Date dateString={frontmatter.date} />
           </Text>
 
-          <ReactMarkdown children={content} />
+          <ReactMarkdown>{content}</ReactMarkdown>
 
           <Container alignContent="flex-start" marginBottom="50px">
             <Link href="/blog/">
