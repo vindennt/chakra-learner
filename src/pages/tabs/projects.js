@@ -30,6 +30,15 @@ const Progress = {
 
 const ProjectList = [
   {
+    name: "Skytrainer: Productivity Helper",
+    description:
+      "Habit-building app that implements habit-forming design principles from mobile Gacha games to empower users to build productive habit. Users can set their own daily goals for in-app rewards, which motivates them to consistently meet their daily goals, such as exercising or reading.",
+    technologies: "React Native, PostgreSQL, TypeScript",
+    image: "skytrainer 1.0.png",
+    progress: Progress.INPROGRESS,
+    link: "https://github.com/vindennt/Skytrainer",
+  },
+  {
     name: "Sustainability Website: 2023 Google Solution Challenge",
     description:
       "Electrical recycling depot locator and platform to promote sustainable textile vendors. Interactive map implemented with Leaflet.",
@@ -74,6 +83,7 @@ const ProjectList = [
     progress: Progress.COMPLETE,
     link: "https://ischool.ubc.ca/news/how-to-design-a-re-design-ischool-students-and-community/",
   },
+
   // {
   //   name: "Translink Station Trip Planner",
   //   description:
