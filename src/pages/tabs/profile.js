@@ -58,6 +58,7 @@ const Profile = () => {
         >
           Gordon Lab
         </Link>
+        .
       </Text>
 
       <br />

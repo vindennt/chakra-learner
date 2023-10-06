@@ -43,20 +43,23 @@ export default function Home() {
     <Box minH={"100vh"} display={"flex"} flexDirection={"column"} flexGrow={1}>
       <Header></Header>
       <Flex alignItems="center" direction="column" minH="100vh">
+        {/* <Box boxSize="sm" alignItems="center" justifyContent={"center"}> */}
         <Image
           p={10}
-          boxSize="lg"
+          objectFit="cover"
+          boxSize="400px"
           borderRadius="full"
           src="/images/d.png"
           alt="profile"
         />
+        {/* </Box> */}
         <Flex direction="column" alignItems="center" justifyContent="top">
-          <Heading size={"2xl"} mb={6}>
+          <Heading size={"2xl"} paddingX={10}>
             Dennis Truong
           </Heading>
 
-          <Text mb={6}>
-            Student with experience in JavaScript, Java, C++, and Python.
+          <Text mb={6} p={10}>
+            Student with experience in Typescript, Java, C++, and Python.
           </Text>
 
           <Tabs
