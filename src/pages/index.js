@@ -38,10 +38,9 @@ function ProfileTab({ children }) {
     </Tab>
   );
 }
-
 export default function Home() {
   return (
-    <Box>
+    <Box minH={"100vh"} display={"flex"} flexDirection={"column"} flexGrow={1}>
       <Header></Header>
       <Flex alignItems="center" direction="column" minH="100vh">
         <Image

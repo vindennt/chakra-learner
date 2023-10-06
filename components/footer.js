@@ -26,11 +26,15 @@ const Footer = (props) => {
     <Flex
       direction="column"
       marginTop={10}
-      paddingBottom={20}
+      // paddingBottom={20}
       h={"140px"}
+      // minH={"10%"}
+      // grow={1}
       p={2}
       alignItems="center"
       bg={useColorModeValue("gray.100", "gray.900")}
+      position={"relative"}
+      width={"100%"}
     >
       <Link p={3} href="mailto:truong.dennis00@gmail.com">
         truong.dennis00@gmail.com

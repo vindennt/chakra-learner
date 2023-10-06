@@ -1,11 +1,18 @@
 import { Box, Text, Flex, Link, Image } from "@chakra-ui/react";
-import Layout from "../../components/header";
+import Header from "../../components/header";
+import Footer from "../../components/footer";
 
 export default function Art() {
   return (
-    <Box>
-      <Layout></Layout>
-      <Flex direction="column" p={12} background="grey.100" rounded={6}>
+    <Box minH={"100vh"} display={"flex"} flexDirection={"column"}>
+      <Header />
+      <Flex
+        direction="column"
+        p={12}
+        background="grey.100"
+        rounded={6}
+        flexGrow={2}
+      >
         <Image
           borderRadius="10px"
           boxSize="md"
@@ -14,6 +21,7 @@ export default function Art() {
           alt="Ninh Binh, Vietnam"
         />
       </Flex>
+      <Footer></Footer>
     </Box>
   );
 }
