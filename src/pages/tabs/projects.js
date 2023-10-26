@@ -47,15 +47,15 @@ const ProjectList = [
     progress: Progress.COMPLETE,
     link: "https://github.com/vindennt/gsc-2023",
   },
-  {
-    name: "Data Scientist v.s. Analysts: Comparison of salary and remote work options",
-    description:
-      "Used tidyverse library to aid statistical inferences about Data Scientists and Analysts from all company sizes and all experience levels. We wanted to explore wich profession was paid more and which one was more likely to work remotely.",
-    technologies: "Python",
-    image: "data-salary-comparison.png",
-    progress: Progress.COMPLETE,
-    link: "https://github.com/vindennt/stat-201-project-group-10/blob/main/Final Project Group 10.ipynb",
-  },
+  // {
+  //   name: "Data Scientist v.s. Analysts: Comparison of salary and remote work options",
+  //   description:
+  //     "Used tidyverse library to aid statistical inferences about Data Scientists and Analysts from all company sizes and all experience levels. We wanted to explore wich profession was paid more and which one was more likely to work remotely.",
+  //   technologies: "Python",
+  //   image: "data-salary-comparison.png",
+  //   progress: Progress.COMPLETE,
+  //   link: "https://github.com/vindennt/stat-201-project-group-10/blob/main/Final Project Group 10.ipynb",
+  // },
   {
     name: "Heart Disease Predictor",
     description:
@@ -65,15 +65,15 @@ const ProjectList = [
     progress: Progress.COMPLETE,
     link: "/heart-disease-model",
   },
-  {
-    name: "Flashcard Manager",
-    description:
-      "App that can edit and review flashcard decks, as well as save and load them to the disk as JSON files.",
-    technologies: "Java",
-    image: "flashcard-manager.png",
-    progress: Progress.COMPLETE,
-    link: "https://github.com/vindennt/flashcard-manager",
-  },
+  // {
+  //   name: "Flashcard Manager",
+  //   description:
+  //     "App that can edit and review flashcard decks, as well as save and load them to the disk as JSON files.",
+  //   technologies: "Java",
+  //   image: "flashcard-manager.png",
+  //   progress: Progress.COMPLETE,
+  //   link: "https://github.com/vindennt/flashcard-manager",
+  // },
   {
     name: "Client Website Redesign",
     description:
